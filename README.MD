@@ -1,2 +1,7 @@
 # Handwritten Digit Recongnition
-Developing a Machine Learning Modal to recognize Hand written Digit.!!!!!!!!!!!!
+Developing a Machine Learning Modal to recognize Hand written Digit using Convolutional Neural Network.
+
+## Libraries Used
+- Tensorflow
+- Keras
+- matplotlib
