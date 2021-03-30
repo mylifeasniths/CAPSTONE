@@ -3,20 +3,20 @@ Developing a Machine Learning Modal to recognize Hand written Digit using Convol
 
 ### Review 1
 - [x] ~Abstract~
-- [x] Aim
-- [x] Problem Statement
-- [x] Literature Survery (cited)
-- [x] Hardware and software Requirements
-- [x] Detialed Description
-    - [x] System Architecture
-    - [x] UML/ER Diagram
-    - [x] Module Description
-    - [x] DFD/Database
-- [x] ~Implementation 10%~
-- [x] References
-- [x] Base Papers
-- [x] Research Papers
-- [x] PPT
+- [x] ~Aim~
+- [x] ~Problem Statement~
+- [x] ~Literature Survery (cited)~
+- [x] ~Hardware and software Requirements~
+- [x] ~Detialed Description~
+    - [x] ~System Architecture~
+    - [x] ~UML/ER Diagram~
+    - [x] ~Module Description~
+    - [x] ~DFD/Database~
+- [x] ~~Implementation 10%~~
+- [x] ~References~
+- [x] ~Base Papers~
+- [x] ~Research Papers~
+- [x] ~PPT~
 
 ### Similar Projects Links
 * [Link1](http://www.diva-portal.org/smash/get/diva2:1293077/FULLTEXT02.pdf)
