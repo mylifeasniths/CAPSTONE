@@ -18,6 +18,9 @@ Developing a Machine Learning Modal to recognize Hand written Digit using Convol
 - [x] ~Research Papers~
 - [x] ~PPT~
 
+### Review-2
+- [x] Code
+
 ### Similar Projects Links
 * [Link1](http://www.diva-portal.org/smash/get/diva2:1293077/FULLTEXT02.pdf)
 * [Link2](https://iarjset.com/upload/2017/si/NCAIT%2017/IARJSET-NCAIT%2011.pdf)
