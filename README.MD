@@ -12,12 +12,15 @@ Developing a Machine Learning Modal to recognize Hand written Digit using Convol
   - softmax
 - Dense Layer
 - Flatten
+- SGD (Stochastic gradient descent) 
 
 ### References Links
 
 - [Comprehensive guide to CNN](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53)
 - [Introduction to CNN](https://towardsdatascience.com/convolutional-neural-network-17fb77e76c05#:~:text=Fully%20Connected%20Layer%20is%20simply,into%20the%20fully%20connected%20layer.)
-
+- [CNN - Beginner Guide](https://towardsdatascience.com/convolution-neural-networks-a-beginners-guide-implementing-a-mnist-hand-written-digit-8aa60330d022)
+- [Visualization Video 1](https://youtu.be/f0t-OCG79-U)
+- [Visualization Video 2](https://youtu.be/KiftWz544_8)
 ### Similar Projects Links
 
 - [Link1](http://www.diva-portal.org/smash/get/diva2:1293077/FULLTEXT02.pdf)
