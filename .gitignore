@@ -2,3 +2,8 @@
 *.vscode
 *~$tailed-description.docx
 *~$notes.docx
+*input.jpg
+*input_28x28.jpg
+*input_negative.jpg
+*knn_model.gzip
+*knn_m.gzip
