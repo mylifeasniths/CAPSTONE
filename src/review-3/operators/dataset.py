@@ -4,17 +4,22 @@ import numpy as np
 from PIL import Image, ImageOps
 import matplotlib.pyplot as plt
 
-categories_dict= {
-    'add' : '+',
-    'sub' : '-',
-    'mul' : '*',
-    'div' : '/',
-}
-categories = ['add','sub','mul','div']
 IMAGES_DIR = 'images' 
 DATASET_DIR = 'dataset' 
+TRAIN_X = 'train_x.npz'
+TRAIN_Y = 'train_y.npz'
+TEST_X  = 'test_x.npz'
+TEST_Y  = 'test_y.npz'
+categories = ['add','sub','mul','div']
 
 def load_process_images(category):
+    """
+    loads all the images from the given cateogory (category name and filename are same)
+    inverts, resize (28 * 28) and converts into greyscale
+
+    parameters : category (string)
+    returns    : list which contains images
+    """
     images = []
     path = os.path.join(IMAGES_DIR,category)
     print(f'category : {category}')
@@ -29,11 +34,20 @@ def load_process_images(category):
     return images
 
 def save_dataset(data,filename):
+    """ 
+    saves the given data with the given filename as .npz type
+    parameters : data (numpy array), filename (string)
+    """
     path = os.path.join(DATASET_DIR,filename)
     np.savez_compressed(f'{path}', data)
     print(f'data saved to {path}')
 
 def load_dataset(filename):
+    """ 
+    loads the given filename and returns it as numpy array
+    parameters : filename (string)
+    returns    : numpy array
+    """
     path = os.path.join(DATASET_DIR,filename)
     dict_data = np.load(path)
     data = dict_data['arr_0']
@@ -41,11 +55,12 @@ def load_dataset(filename):
     return data
 
 def main():
+    train_x = None
+    test_x = None
+    train_y = np.array([])
+    test_y = np.array([])
     # category is also the name of the folder
     for category in categories:
-        train_filename = f'{category}_train.npz'
-        test_filename = f'{category}_test.npz'
-
         images = load_process_images(category)
 
         # splitting images into train and test
@@ -58,20 +73,35 @@ def main():
         train_images = images[0:train_images_count]
         test_images = images[train_images_count:]
 
-        # convering list into numpy array
+        # convering and reshaping list into numpy array
         train_array = np.array(train_images)
         test_array = np.array(test_images)
         train_array = train_array.reshape(train_images_count,28 * 28)
         test_array = test_array.reshape(test_images_count,28 * 28)
 
-        # saving train and test arrays into .npz
-        save_dataset(train_array,train_filename)
-        save_dataset(test_array,test_filename)
+        # appending current category arrays to  total arrays
+        if(train_x is None):
+            train_x = train_array
+        else:
+            train_x = np.concatenate((train_x,train_array))
+            
+        if(test_x is None):
+            test_x = test_array
+        else:
+            test_x = np.concatenate((test_x,test_array))
+        
+        current_train_labels = np.array([category for i in range(train_images_count)])
+        current_test_labels = np.array([category for i in range(test_images_count)])
+        train_y = np.concatenate((train_y,current_train_labels))
+        test_y = np.concatenate((test_y,current_test_labels))
 
-        # loading saved train and test arrays 
-        # train_images = load_dataset(train_filename)
-        # test_images =  load_dataset(test_filename)
         print()
+
+    save_dataset(train_x,TRAIN_X)
+    save_dataset(train_y,TRAIN_Y)
+    save_dataset(test_x,TEST_X) 
+    save_dataset(test_y,TEST_Y)
+
 
 if __name__ == '__main__':
     main()

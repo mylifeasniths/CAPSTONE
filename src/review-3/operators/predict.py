@@ -2,7 +2,7 @@ import joblib
 from random import randint
 from matplotlib import pyplot
 import numpy as np
-from dataset2 import load_dataset
+from dataset import load_dataset
 
 # Idea
 # 1. load datasets

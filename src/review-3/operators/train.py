@@ -1,7 +1,7 @@
 from sklearn.svm import SVC
 import joblib
 import gzip
-from dataset2 import load_dataset
+from dataset import load_dataset
 
 # Idea
 # 1. load datasets
@@ -9,13 +9,6 @@ from dataset2 import load_dataset
 # 3. intialize & train model
 # 4. evaluate model
 # 5. save model
-
-labels = {
-    'add' : '+',
-    'sub' : '-',
-    'mul' : '*',
-    'div' : '/',
-}
 
 TRAIN_X = 'train_x.npz'
 TRAIN_Y = 'train_y.npz'
