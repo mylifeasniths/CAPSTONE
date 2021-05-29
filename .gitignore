@@ -8,3 +8,4 @@
 *knn_model.gzip
 *knn_m.gzip
 *images/
+*__pycache__
