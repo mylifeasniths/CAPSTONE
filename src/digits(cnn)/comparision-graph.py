@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
 
+# this file generates graph for accuracy comparision between cnn and svm
+
 plt.style.use('ggplot')
 models = ['SVM', 'CNN']
 accuracy = [97.920, 99.280]

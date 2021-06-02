@@ -14,10 +14,10 @@ data = {
     'mul': { 'total': 0, 'correct': 0 },
     'div': { 'total': 0, 'correct': 0 },
 }
-y_test = []
-y_pred = []
 
 def print_barchart():
+    total = [ digit['total'] for digit in data.values()]
+    correct = [ digit['correct'] for digit in data.values()]
     # Bar Chart reference: https://benalexkeen.com/bar-charts-in-matplotlib/
     ind = np.arange(len(data.keys())) 
     width = 0.35       
@@ -32,15 +32,6 @@ def print_barchart():
     plt.legend(loc='best')
     plt.show()
 
-def calculate_error():
-    mae = np.sqrt(metrics.mean_squared_error(y_test, y_pred))
-    mse = metrics.mean_squared_error(y_test, y_pred)
-    rmse = np.sqrt(metrics.mean_squared_error(y_test, y_pred))
-
-    print("Mean Absolute Error= ",mae)
-    print("Mean Squared Error= ",mse)
-    print("Root Mean Squared Error = ",rmse)
-
 def main():
     test_x, test_y = load_test_dataset()
     test_x = pre_processing(test_x)
@@ -53,9 +44,6 @@ def main():
         result = classifier.predict([current_image])
         result = result[0]
 
-        y_test.append(current_label)
-        y_pred.append(result)
-
         data[current_label]['total'] += 1
         if current_label == result:
             data[current_label]['correct'] += 1
@@ -65,5 +53,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    # print_barchart()
-    calculate_error()
+    print_barchart()

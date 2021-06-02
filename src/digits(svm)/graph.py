@@ -7,31 +7,31 @@ from random import randint
 from sklearn import metrics
 from sklearn.metrics import mean_squared_error,mean_absolute_error
 
-# data = {
-#  '0': {'correct': 0, 'total': 0},
-#  '1': {'correct': 0, 'total': 0},
-#  '2': {'correct': 0, 'total': 0},
-#  '3': {'correct': 0, 'total': 0},
-#  '4': {'correct': 0, 'total': 0},
-#  '5': {'correct': 0, 'total': 0},
-#  '6': {'correct': 0, 'total': 0},
-#  '7': {'correct': 0, 'total': 0},
-#  '8': {'correct': 0, 'total': 0},
-#  '9': {'correct': 0, 'total': 0},
-# }
-
 data = {
- '0': {'correct': 973, 'total': 980},
- '1': {'correct': 1126, 'total': 1135},
- '2': {'correct': 1006, 'total': 1032},
- '3': {'correct': 995, 'total': 1010},
- '4': {'correct': 961, 'total': 982},
- '5': {'correct': 871, 'total': 892},
- '6': {'correct': 944, 'total': 958},
- '7': {'correct': 996, 'total': 1028},
- '8': {'correct': 950, 'total': 974},
- '9': {'correct': 970, 'total': 1009}
+ '0': {'correct': 0, 'total': 0},
+ '1': {'correct': 0, 'total': 0},
+ '2': {'correct': 0, 'total': 0},
+ '3': {'correct': 0, 'total': 0},
+ '4': {'correct': 0, 'total': 0},
+ '5': {'correct': 0, 'total': 0},
+ '6': {'correct': 0, 'total': 0},
+ '7': {'correct': 0, 'total': 0},
+ '8': {'correct': 0, 'total': 0},
+ '9': {'correct': 0, 'total': 0},
 }
+# These are output values, since this program will take few minutes to run, I saved it right here!
+# data = {
+#  '0': {'correct': 973, 'total': 980},
+#  '1': {'correct': 1126, 'total': 1135},
+#  '2': {'correct': 1006, 'total': 1032},
+#  '3': {'correct': 995, 'total': 1010},
+#  '4': {'correct': 961, 'total': 982},
+#  '5': {'correct': 871, 'total': 892},
+#  '6': {'correct': 944, 'total': 958},
+#  '7': {'correct': 996, 'total': 1028},
+#  '8': {'correct': 950, 'total': 974},
+#  '9': {'correct': 970, 'total': 1009}
+# }
 
 y_test = []
 y_pred = []
@@ -45,8 +45,6 @@ def load_dataset():
     nsamples, nx, ny = testX.shape
     testX = testX.reshape((nsamples, nx*ny))
 
-    # trainY = to_categorical(trainY)
-    # testY = to_categorical(testY)
     return trainX, trainY, testX, testY
 
 
@@ -117,5 +115,5 @@ def calculate_error():
 
 if __name__ == "__main__":
     main()
-    # print_barchart()
+    print_barchart()
     calculate_error()
