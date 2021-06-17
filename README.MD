@@ -4,7 +4,7 @@ Developing a Machine Learning Modal to recognize Hand written Digit using Convon
 
 ### Implementation
 
-<img src="./img/output.gif" />
+<img src="https://raw.githubusercontent.com/mylifeasniths/CAPSTONE/master/img/ouput.gif" />
 
 ### Setup
 
